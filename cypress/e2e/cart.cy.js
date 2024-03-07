@@ -69,7 +69,7 @@ describe('Cart API Tests', () => {
 
         expect(response.status).to.eq(200);
         expect(response.body).to.have.property('baseMobileUrl');
-
+        
         const baseMobileUrl = response.body.baseMobileUrl;
         cy.log('value base url:', baseMobileUrl);
 
