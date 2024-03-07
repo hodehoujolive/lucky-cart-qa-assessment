@@ -6,6 +6,8 @@
 - Scenario 2 tests the Cart API's response when the total amount exceeds $50 and includes game information, also expecting a successful 200 status.
 - Scenario 3 focuses on the web game experience, simulating user interactions such as navigating to the game page, initiating gameplay, and validating a successful game win message
 - By encompassing these scenarios, the test suite aims to ensure the reliability and functionality of the new gaming experience across different components and interactions.
+- TODO : [ ] Add cucumber preprocessor to the test suite
+
 
 ## Installation
 
