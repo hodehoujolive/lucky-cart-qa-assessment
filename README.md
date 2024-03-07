@@ -1,4 +1,5 @@
 ## Overview
+[Video Record](https://drive.google.com/file/d/1uSeK6CHmhkjgd92284aWQQGee_3Hh8C-/view?usp=sharing)
 
 - The automated tests are designed to validate different scenarios within the gaming experience, covering both the functionality of the Cart API and the gameplay through the web interface.
 - Scenario 1 tests the Cart API's response when the total amount (inclusive of tax) is below $50, ensuring it returns a successful 200 status.
