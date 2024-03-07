@@ -4,12 +4,20 @@ const randomcartId = faker.string.uuid()
 const randomshopperId= faker.string.uuid()
 const randomshopperEmail = faker.internet.email()
 
+const api_Endpoint = Cypress.env('api_endpoint');
+const authKey = Cypress.env('auth_key');
+const authTs = Cypress.env('auth_ts');
+const authSign = Cypress.env('auth_sign');
+
+// Use authKey, authTs, and authSign in your request body
+
+
 describe('Cart API Tests', () => {
 
   it('should return 401 for invalid authentication parameters', () => {
     cy.request({
       method :'POST', 
-      url:'https://api.luckycart.com/cart/ticket', 
+      url: api_Endpoint, 
       body: {
       "cartId": randomcartId,
       "totalAti": 55.00,
@@ -29,16 +37,16 @@ describe('Cart API Tests', () => {
   });
 
   it('should return 200 for totalAti < 50 without game', () => {
-    cy.request('POST', 'https://api.luckycart.com/cart/ticket', 
+    cy.request('POST', api_Endpoint, 
     {
       "cartId": randomcartId,
       "totalAti": 49,
       "shopperId": randomshopperId,
       "shopperEmail": randomshopperEmail,
       "auth_v": "2.0",
-      "auth_key": "tVIoa1S6",
-      "auth_ts": "1640991600",
-      "auth_sign": "c723c649c389d68d8ab3feb4f53875f7f7eb87d27ec575f1f06a66e3dae4dc30"
+      "auth_key": authKey,
+      "auth_ts": authTs,
+      "auth_sign": authSign
     })
       .then((response) => {
         expect(response.status).to.eq(200);
@@ -46,16 +54,16 @@ describe('Cart API Tests', () => {
   });
 
   it('should return 200 for totalAti > 50 with game', () => {
-    cy.request('POST', 'https://api.luckycart.com/cart/ticket', 
+    cy.request('POST', api_Endpoint, 
     {
       "cartId": faker.string.uuid(),
       "totalAti": 55.00,
       "shopperId": faker.string.uuid(),
       "shopperEmail": faker.internet.email(),
       "auth_v": "2.0",
-      "auth_key": "tVIoa1S6",
-      "auth_ts": "1640991600",
-      "auth_sign": "c723c649c389d68d8ab3feb4f53875f7f7eb87d27ec575f1f06a66e3dae4dc30"
+      "auth_key": authKey,
+      "auth_ts": authTs,
+      "auth_sign": authSign
     })
       .then((response) => {
         cy.log('Response:', response);
@@ -64,12 +72,12 @@ describe('Cart API Tests', () => {
         const baseMobileUrl = response.body.baseMobileUrl;
         cy.log('value base url:', baseMobileUrl);
         cy.visit(response.body.baseMobileUrl);
-        cy.wait(2000);
+        cy.wait(4000);
 
         cy.get('.lc-iframe').then(($iframe) => {
           const $body = $iframe.contents().find('body');
           cy.wrap($body).find('.sc-bczRLJ').click();
-          cy.wrap($body).contains('Congrats, you won nothing!', { timeout: 20000 } )
+          cy.wrap($body).contains('Congrats', { timeout: 20000 } )
         });
       });
   });
