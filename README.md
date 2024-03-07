@@ -2,8 +2,8 @@
 [Video Record](https://drive.google.com/file/d/1uSeK6CHmhkjgd92284aWQQGee_3Hh8C-/view?usp=sharing)
 
 - The automated tests are designed to validate different scenarios within the gaming experience, covering both the functionality of the Cart API and the gameplay through the web interface.
-- Scenario 1 tests the Cart API's response when the total amount (inclusive of tax) is below $50, ensuring it returns a successful 200 status.
-- Scenario 2 tests the Cart API's response when the total amount exceeds $50 and includes game information, also expecting a successful 200 status.
+- Scenario 1 tests the Cart API's response when the total amount (inclusive of tax) is below 50, ensuring it returns a successful 200 status.
+- Scenario 2 tests the Cart API's response when the total amount exceeds 50 and includes game information, also expecting a successful 200 status.
 - Scenario 3 focuses on the web game experience, simulating user interactions such as navigating to the game page, initiating gameplay, and validating a successful game win message
 - By encompassing these scenarios, the test suite aims to ensure the reliability and functionality of the new gaming experience across different components and interactions.
 - TODO : [] Add cucumber preprocessor to the test suite
