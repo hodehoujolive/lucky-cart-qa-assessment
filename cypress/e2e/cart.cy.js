@@ -8,7 +8,7 @@ const authKey = Cypress.env('auth_key');
 const authTs = Cypress.env('auth_ts');
 const authSign = Cypress.env('auth_sign');
 
-// Use authKey, authTs, and authSign in your request body
+//Use authKey, authTs, and authSign in your request body
 
 describe('Cart API Tests', () => {
 

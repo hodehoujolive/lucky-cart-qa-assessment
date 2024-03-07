@@ -4,6 +4,7 @@ class CartPage {
       cy.visit(url);
     }
   
+    
     getIFrame() {
       return cy.get('.lc-iframe');
     }
