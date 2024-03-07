@@ -5,7 +5,7 @@ The automated tests are designed to validate different scenarios within the gami
 - Scenario 1 : Cart API responds with a 401 with wrong authentication parameters (auth_v, auth_key, auth_ts, auth_sign) 
 - Scenario 2 : Cart API responds with a 200, without game with a totalAti (total all tax inclusive) lower than 50
 - Scenario 3 : Cart API responds with a 200, with game information with a totalAti (total all tax inclusive) greater than 50 & simulating user interactions
-- TODO : [] Add cucumber preprocessor to the test suite
+TODO : [ ] Add cucumber preprocessor to the test suite
 
 
 ## Installation
