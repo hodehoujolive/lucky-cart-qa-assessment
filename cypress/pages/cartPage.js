@@ -4,7 +4,6 @@ class CartPage {
       cy.visit(url);
     }
   
-    
     getIFrame() {
       return cy.get('.lc-iframe');
     }
@@ -12,7 +11,7 @@ class CartPage {
     clickButtonInIFrame() {
       this.getIFrame().then(($iframe) => {
         const $body = $iframe.contents().find('body');
-        cy.wrap($body).find('.sc-bczRLJ').click();
+        cy.wrap($body).find('.sc-bczRLJ').as('btn').click();
       });
     }
   

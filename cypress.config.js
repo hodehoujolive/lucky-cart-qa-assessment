@@ -8,10 +8,10 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
   env: {
-    api_endpoint : "api_endpoint",
-    auth_key: "auth_key",
-    auth_ts: "auth_ts",
-    auth_sign: "auth_sign"
+    api_endpoint : "https://api.luckycart.com/cart/ticket",
+    auth_key: "tVIoa1S6",
+    auth_ts: "1640991600",
+    auth_sign: "c723c649c389d68d8ab3feb4f53875f7f7eb87d27ec575f1f06a66e3dae4dc30"
     }
   },
 });
