@@ -12,6 +12,19 @@
 ## install all dependencies from the root directory
 npm install
 ```
+## Configuration
+Before running the tests, you need to configure authentication variables in the ```cypress.config.js``` file.
+1. Open cypress.config.js file located in the root of the project.
+2. Find the following lines:
+3. Replace the empty strings "" with your authentication credentials.
+
+```bash
+env: {
+    auth_key: "",
+    auth_ts: "",
+    auth_sign: ""
+}
+```
 
 ## Opening Cypress App
 
