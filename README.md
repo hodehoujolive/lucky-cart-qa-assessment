@@ -1,5 +1,4 @@
 ## Overview
-[Video Record](https://drive.google.com/file/d/1uSeK6CHmhkjgd92284aWQQGee_3Hh8C-/view?usp=sharing)
 
 The automated tests are designed to validate different scenarios within the gaming experience, covering both the functionality of the Cart API and the gameplay through the web interface.
 - Scenario 1 : Cart API responds with a 401 with wrong authentication parameters (auth_v, auth_key, auth_ts, auth_sign) 
